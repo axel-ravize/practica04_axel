@@ -1,0 +1,12 @@
+D:\4to Semestre\Práctica 4\Práctica 4\bin\Debug\Práctica 4.exe.config
+D:\4to Semestre\Práctica 4\Práctica 4\bin\Debug\Práctica 4.exe
+D:\4to Semestre\Práctica 4\Práctica 4\bin\Debug\Práctica 4.pdb
+D:\4to Semestre\Práctica 4\Práctica 4\bin\Debug\Práctica 4.xml
+D:\4to Semestre\Práctica 4\Práctica 4\obj\Debug\Práctica 4.vbprojAssemblyReference.cache
+D:\4to Semestre\Práctica 4\Práctica 4\obj\Debug\Práctica_4.Form1.resources
+D:\4to Semestre\Práctica 4\Práctica 4\obj\Debug\Práctica_4.Resources.resources
+D:\4to Semestre\Práctica 4\Práctica 4\obj\Debug\Práctica 4.vbproj.GenerateResource.cache
+D:\4to Semestre\Práctica 4\Práctica 4\obj\Debug\Práctica 4.vbproj.CoreCompileInputs.cache
+D:\4to Semestre\Práctica 4\Práctica 4\obj\Debug\Práctica 4.exe
+D:\4to Semestre\Práctica 4\Práctica 4\obj\Debug\Práctica 4.xml
+D:\4to Semestre\Práctica 4\Práctica 4\obj\Debug\Práctica 4.pdb
