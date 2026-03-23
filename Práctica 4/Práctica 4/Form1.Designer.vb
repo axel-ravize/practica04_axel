@@ -39,9 +39,16 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Segundos = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Start = New System.Windows.Forms.Button()
+        Me.Reset = New System.Windows.Forms.Button()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.Tiempo = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Config, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Horas
@@ -50,7 +57,7 @@ Partial Class Form1
         Me.Horas.BackColor = System.Drawing.SystemColors.WindowText
         Me.Horas.Font = New System.Drawing.Font("Ebrima", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Horas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Horas.Location = New System.Drawing.Point(40, 153)
+        Me.Horas.Location = New System.Drawing.Point(40, 149)
         Me.Horas.Name = "Horas"
         Me.Horas.Size = New System.Drawing.Size(84, 65)
         Me.Horas.TabIndex = 0
@@ -62,7 +69,7 @@ Partial Class Form1
         Me.Label1.BackColor = System.Drawing.SystemColors.WindowText
         Me.Label1.Font = New System.Drawing.Font("Ebrima", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(107, 153)
+        Me.Label1.Location = New System.Drawing.Point(107, 149)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(41, 65)
         Me.Label1.TabIndex = 1
@@ -74,7 +81,7 @@ Partial Class Form1
         Me.Minutos.BackColor = System.Drawing.SystemColors.WindowText
         Me.Minutos.Font = New System.Drawing.Font("Ebrima", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Minutos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Minutos.Location = New System.Drawing.Point(130, 153)
+        Me.Minutos.Location = New System.Drawing.Point(130, 149)
         Me.Minutos.Name = "Minutos"
         Me.Minutos.Size = New System.Drawing.Size(84, 65)
         Me.Minutos.TabIndex = 2
@@ -86,7 +93,7 @@ Partial Class Form1
         Me.Dias.BackColor = System.Drawing.SystemColors.WindowText
         Me.Dias.Font = New System.Drawing.Font("Ebrima", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Dias.ForeColor = System.Drawing.Color.Lime
-        Me.Dias.Location = New System.Drawing.Point(118, 266)
+        Me.Dias.Location = New System.Drawing.Point(118, 251)
         Me.Dias.Name = "Dias"
         Me.Dias.Size = New System.Drawing.Size(114, 47)
         Me.Dias.TabIndex = 3
@@ -98,7 +105,7 @@ Partial Class Form1
         Me.Fecha.BackColor = System.Drawing.SystemColors.WindowText
         Me.Fecha.Font = New System.Drawing.Font("Ebrima", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Fecha.ForeColor = System.Drawing.Color.Lime
-        Me.Fecha.Location = New System.Drawing.Point(45, 319)
+        Me.Fecha.Location = New System.Drawing.Point(45, 307)
         Me.Fecha.Name = "Fecha"
         Me.Fecha.Size = New System.Drawing.Size(263, 32)
         Me.Fecha.TabIndex = 4
@@ -133,6 +140,7 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -176,7 +184,7 @@ Partial Class Form1
         Me.Segundos.BackColor = System.Drawing.SystemColors.WindowText
         Me.Segundos.Font = New System.Drawing.Font("Ebrima", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Segundos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Segundos.Location = New System.Drawing.Point(225, 153)
+        Me.Segundos.Location = New System.Drawing.Point(225, 149)
         Me.Segundos.Name = "Segundos"
         Me.Segundos.Size = New System.Drawing.Size(84, 65)
         Me.Segundos.TabIndex = 8
@@ -188,11 +196,63 @@ Partial Class Form1
         Me.Label3.BackColor = System.Drawing.SystemColors.WindowText
         Me.Label3.Font = New System.Drawing.Font("Ebrima", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(197, 153)
+        Me.Label3.Location = New System.Drawing.Point(197, 149)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(41, 65)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = ":"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Tiempo)
+        Me.Panel2.Controls.Add(Me.Reset)
+        Me.Panel2.Controls.Add(Me.Start)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(248, 215)
+        Me.Panel2.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(71, 19)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(102, 21)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Cronómetro"
+        '
+        'Start
+        '
+        Me.Start.Location = New System.Drawing.Point(29, 163)
+        Me.Start.Name = "Start"
+        Me.Start.Size = New System.Drawing.Size(75, 23)
+        Me.Start.TabIndex = 1
+        Me.Start.Text = "Start"
+        Me.Start.UseVisualStyleBackColor = True
+        '
+        'Reset
+        '
+        Me.Reset.Location = New System.Drawing.Point(147, 163)
+        Me.Reset.Name = "Reset"
+        Me.Reset.Size = New System.Drawing.Size(75, 23)
+        Me.Reset.TabIndex = 2
+        Me.Reset.Text = "Reset"
+        Me.Reset.UseVisualStyleBackColor = True
+        '
+        'Timer3
+        '
+        '
+        'Tiempo
+        '
+        Me.Tiempo.AutoSize = True
+        Me.Tiempo.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tiempo.Location = New System.Drawing.Point(25, 92)
+        Me.Tiempo.Name = "Tiempo"
+        Me.Tiempo.Size = New System.Drawing.Size(59, 21)
+        Me.Tiempo.TabIndex = 3
+        Me.Tiempo.Text = "Label5"
         '
         'Form1
         '
@@ -214,6 +274,8 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Config, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -234,4 +296,10 @@ Partial Class Form1
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Segundos As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Tiempo As Label
+    Friend WithEvents Reset As Button
+    Friend WithEvents Start As Button
+    Friend WithEvents Timer3 As Timer
 End Class
