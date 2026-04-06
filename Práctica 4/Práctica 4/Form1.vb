@@ -50,6 +50,7 @@
         End If
     End Sub
 
+    ' Boton de Configuraciones
     Private Sub Config_Click(sender As Object, e As EventArgs) Handles Config.Click
         If Panel1.Visible = False Then
             Panel1.Visible = True
@@ -79,13 +80,13 @@
             Fecha.ForeColor = Color.Red
 
         ElseIf Color_Texto = "Azul" Then
-            Horas.ForeColor = Color.Blue
-            Minutos.ForeColor = Color.Blue
-            Segundos.ForeColor = Color.Blue
-            Label1.ForeColor = Color.Blue
-            Label3.ForeColor = Color.Blue
-            Dias.ForeColor = Color.Blue
-            Fecha.ForeColor = Color.Blue
+            Horas.ForeColor = Color.Aqua
+            Minutos.ForeColor = Color.Aqua
+            Segundos.ForeColor = Color.Aqua
+            Label1.ForeColor = Color.Aqua
+            Label3.ForeColor = Color.Aqua
+            Dias.ForeColor = Color.Aqua
+            Fecha.ForeColor = Color.Aqua
 
         ElseIf Color_Texto = "Amarillo" Then
             Horas.ForeColor = Color.Yellow
@@ -97,13 +98,13 @@
             Fecha.ForeColor = Color.Yellow
 
         ElseIf Color_Texto = "Verde" Then
-            Horas.ForeColor = Color.Green
-            Minutos.ForeColor = Color.Green
-            Segundos.ForeColor = Color.Green
-            Label1.ForeColor = Color.Green
-            Label3.ForeColor = Color.Green
-            Dias.ForeColor = Color.Green
-            Fecha.ForeColor = Color.Green
+            Horas.ForeColor = Color.Lime
+            Minutos.ForeColor = Color.Lime
+            Segundos.ForeColor = Color.Lime
+            Label1.ForeColor = Color.Lime
+            Label3.ForeColor = Color.Lime
+            Dias.ForeColor = Color.Lime
+            Fecha.ForeColor = Color.Lime
         End If
     End Sub
 
@@ -117,16 +118,23 @@
         End If
     End Sub
 
+    ' Código para el cronómetro
+
+    Private StartTime As DateTime
+    Private Elapsed As TimeSpan = TimeSpan.Zero
+
     Private Sub Start_Click(sender As Object, e As EventArgs) Handles Start.Click
         If Boton_Start = False Then
             Timer3.Enabled = True
             Boton_Start = True
             Start.Text = "Stop"
+            StartTime = DateTime.Now
 
         ElseIf Boton_Start = True Then
             Timer3.Enabled = False
             Boton_Start = False
             Start.Text = "Start"
+            Elapsed += DateTime.Now - StartTime
         End If
     End Sub
 
@@ -139,5 +147,13 @@
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
         Tiempo_Crono = Tiempo_Crono + 1
         Tiempo.Text = Tiempo_Crono.ToString()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        If Panel2.Visible = False Then
+            Panel2.Visible = True
+        ElseIf Panel2.Visible = True Then
+            Panel2.Visible = False
+        End If
     End Sub
 End Class

@@ -34,21 +34,23 @@ Partial Class Form1
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Config = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Tiempo = New System.Windows.Forms.Label()
+        Me.Reset = New System.Windows.Forms.Button()
+        Me.Start = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Segundos = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Start = New System.Windows.Forms.Button()
-        Me.Reset = New System.Windows.Forms.Button()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.Tiempo = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Config, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Horas
@@ -56,7 +58,7 @@ Partial Class Form1
         Me.Horas.AutoSize = True
         Me.Horas.BackColor = System.Drawing.SystemColors.WindowText
         Me.Horas.Font = New System.Drawing.Font("Ebrima", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Horas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Horas.ForeColor = System.Drawing.Color.Lime
         Me.Horas.Location = New System.Drawing.Point(40, 149)
         Me.Horas.Name = "Horas"
         Me.Horas.Size = New System.Drawing.Size(84, 65)
@@ -68,7 +70,7 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.WindowText
         Me.Label1.Font = New System.Drawing.Font("Ebrima", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label1.ForeColor = System.Drawing.Color.Lime
         Me.Label1.Location = New System.Drawing.Point(107, 149)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(41, 65)
@@ -80,7 +82,7 @@ Partial Class Form1
         Me.Minutos.AutoSize = True
         Me.Minutos.BackColor = System.Drawing.SystemColors.WindowText
         Me.Minutos.Font = New System.Drawing.Font("Ebrima", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Minutos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Minutos.ForeColor = System.Drawing.Color.Lime
         Me.Minutos.Location = New System.Drawing.Point(130, 149)
         Me.Minutos.Name = "Minutos"
         Me.Minutos.Size = New System.Drawing.Size(84, 65)
@@ -140,7 +142,6 @@ Partial Class Form1
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -149,6 +150,59 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(248, 215)
         Me.Panel1.TabIndex = 7
         Me.Panel1.Visible = False
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Tiempo)
+        Me.Panel2.Controls.Add(Me.Reset)
+        Me.Panel2.Controls.Add(Me.Start)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Location = New System.Drawing.Point(51, 143)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(248, 215)
+        Me.Panel2.TabIndex = 3
+        Me.Panel2.Visible = False
+        '
+        'Tiempo
+        '
+        Me.Tiempo.AutoSize = True
+        Me.Tiempo.Font = New System.Drawing.Font("Malgun Gothic", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tiempo.Location = New System.Drawing.Point(33, 80)
+        Me.Tiempo.Name = "Tiempo"
+        Me.Tiempo.Size = New System.Drawing.Size(185, 45)
+        Me.Tiempo.TabIndex = 3
+        Me.Tiempo.Text = "00:00:00.00"
+        '
+        'Reset
+        '
+        Me.Reset.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Reset.Location = New System.Drawing.Point(147, 151)
+        Me.Reset.Name = "Reset"
+        Me.Reset.Size = New System.Drawing.Size(75, 23)
+        Me.Reset.TabIndex = 2
+        Me.Reset.Text = "Reset"
+        Me.Reset.UseVisualStyleBackColor = True
+        '
+        'Start
+        '
+        Me.Start.Font = New System.Drawing.Font("Malgun Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Start.Location = New System.Drawing.Point(29, 151)
+        Me.Start.Name = "Start"
+        Me.Start.Size = New System.Drawing.Size(75, 23)
+        Me.Start.TabIndex = 1
+        Me.Start.Text = "Start"
+        Me.Start.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Malgun Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label4.Location = New System.Drawing.Point(64, 22)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(121, 25)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Cronómetro"
         '
         'ComboBox1
         '
@@ -170,10 +224,10 @@ Partial Class Form1
         '
         'Label2
         '
-        Me.Label2.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(49, 14)
+        Me.Label2.Font = New System.Drawing.Font("Malgun Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(45, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(151, 26)
+        Me.Label2.Size = New System.Drawing.Size(158, 26)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Configuraciones"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -183,7 +237,7 @@ Partial Class Form1
         Me.Segundos.AutoSize = True
         Me.Segundos.BackColor = System.Drawing.SystemColors.WindowText
         Me.Segundos.Font = New System.Drawing.Font("Ebrima", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Segundos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Segundos.ForeColor = System.Drawing.Color.Lime
         Me.Segundos.Location = New System.Drawing.Point(225, 149)
         Me.Segundos.Name = "Segundos"
         Me.Segundos.Size = New System.Drawing.Size(84, 65)
@@ -195,70 +249,33 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.SystemColors.WindowText
         Me.Label3.Font = New System.Drawing.Font("Ebrima", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label3.ForeColor = System.Drawing.Color.Lime
         Me.Label3.Location = New System.Drawing.Point(197, 149)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(41, 65)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = ":"
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Tiempo)
-        Me.Panel2.Controls.Add(Me.Reset)
-        Me.Panel2.Controls.Add(Me.Start)
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(248, 215)
-        Me.Panel2.TabIndex = 3
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(71, 19)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(102, 21)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Cronómetro"
-        '
-        'Start
-        '
-        Me.Start.Location = New System.Drawing.Point(29, 163)
-        Me.Start.Name = "Start"
-        Me.Start.Size = New System.Drawing.Size(75, 23)
-        Me.Start.TabIndex = 1
-        Me.Start.Text = "Start"
-        Me.Start.UseVisualStyleBackColor = True
-        '
-        'Reset
-        '
-        Me.Reset.Location = New System.Drawing.Point(147, 163)
-        Me.Reset.Name = "Reset"
-        Me.Reset.Size = New System.Drawing.Size(75, 23)
-        Me.Reset.TabIndex = 2
-        Me.Reset.Text = "Reset"
-        Me.Reset.UseVisualStyleBackColor = True
-        '
         'Timer3
         '
         '
-        'Tiempo
+        'PictureBox2
         '
-        Me.Tiempo.AutoSize = True
-        Me.Tiempo.Font = New System.Drawing.Font("Malgun Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tiempo.Location = New System.Drawing.Point(25, 92)
-        Me.Tiempo.Name = "Tiempo"
-        Me.Tiempo.Size = New System.Drawing.Size(59, 21)
-        Me.Tiempo.TabIndex = 3
-        Me.Tiempo.Text = "Label5"
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(223, 364)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(35, 35)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 10
+        Me.PictureBox2.TabStop = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(352, 531)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Config)
         Me.Controls.Add(Me.Fecha)
@@ -276,6 +293,7 @@ Partial Class Form1
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -302,4 +320,5 @@ Partial Class Form1
     Friend WithEvents Reset As Button
     Friend WithEvents Start As Button
     Friend WithEvents Timer3 As Timer
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
