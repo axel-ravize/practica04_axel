@@ -139,14 +139,16 @@
     End Sub
 
     Private Sub Reset_Click(sender As Object, e As EventArgs) Handles Reset.Click
-        Tiempo_Crono = 0
+        Elapsed = TimeSpan.Zero
         Timer3.Enabled = False
-        Tiempo.Text = "0"
+        Tiempo.Text = "00:00:00.00"
+        Boton_Start = False
+        Start.Text = "Start"
     End Sub
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
-        Tiempo_Crono = Tiempo_Crono + 1
-        Tiempo.Text = Tiempo_Crono.ToString()
+        Dim Current = Elapsed + (DateTime.Now - StartTime)
+        Tiempo.Text = Current.ToString("hh\:mm\:ss\.ff")
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
@@ -154,6 +156,15 @@
             Panel2.Visible = True
         ElseIf Panel2.Visible = True Then
             Panel2.Visible = False
+        End If
+    End Sub
+
+    ' Código del temporizador
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        If Panel3.Visible = True Then
+            Panel3.Visible = False
+        ElseIf Panel3.Visible = False Then
+            Panel3.Visible = True
         End If
     End Sub
 End Class
